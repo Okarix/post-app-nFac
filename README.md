@@ -23,5 +23,5 @@ In the Basic level, you will implement the core interface of application.
 
 - [ ] Implement axios interceptor to pass auth token with requests.
 - [ ] Handle API errors in axios interceptor response.
-- [ ] Create ThemeToggle button that changes the theme of your application from dark/light to light/dark using Context API
+- [x] Create ThemeToggle button that changes the theme of your application from dark/light to light/dark using Context API
 - [ ] Implement ADD, UPDATE, DELETE post features
