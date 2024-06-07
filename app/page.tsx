@@ -1,4 +1,3 @@
-import { CardComponent } from '@/components/card-component';
 import CardWrapper from '@/components/card-wrapper';
 
 export default function Home() {

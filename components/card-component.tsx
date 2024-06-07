@@ -1,6 +1,8 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ThumbsUp, ThumbsDown, Eye } from 'lucide-react';
 import { Badge } from './ui/badge';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 export function CardComponent() {
 	return (
@@ -12,16 +14,16 @@ export function CardComponent() {
 				</CardHeader>
 				<CardFooter className='mt-2 gap-10'>
 					<div className='flex gap-4'>
-						<span className='flex items-center '>
-							<ThumbsUp />
+						<span className='flex items-center gap-1 '>
+							<ThumbsUp className='w-5 h-5' />
 							51
 						</span>
-						<span className='flex items-center'>
-							<ThumbsDown />
+						<span className='flex items-center gap-1'>
+							<ThumbsDown className='w-5 h-5' />
 							24
 						</span>
-						<span className='flex items-center'>
-							<Eye />
+						<span className='flex items-center gap-1'>
+							<Eye className='w-5 h-5' />
 							300
 						</span>
 					</div>
@@ -30,6 +32,9 @@ export function CardComponent() {
 						<Badge>Cats</Badge>
 						<Badge>Books</Badge>
 					</div>
+					<Link href='/1'>
+						<p className='text-slate-400 cursor-pointer hover:text-white'>Read more...</p>
+					</Link>
 				</CardFooter>
 			</div>
 			<CardContent className='w-1/3'>
