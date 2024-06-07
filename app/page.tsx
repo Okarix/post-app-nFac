@@ -1,5 +1,10 @@
-import { ModeToggle } from '@/components/ui/toggle';
+import { CardComponent } from '@/components/card-component';
+import CardWrapper from '@/components/card-wrapper';
 
 export default function Home() {
-	return <main className='container mx-auto'></main>;
+	return (
+		<main className='container mx-auto py-10'>
+			<CardWrapper />
+		</main>
+	);
 }
