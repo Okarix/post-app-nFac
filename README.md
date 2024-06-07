@@ -6,7 +6,7 @@ In the Basic level, you will implement the core interface of application.
 
 - [ ] Fetch all posts using axios
 - [x] Implement posts design on main page.
-- [ ] Implement routing to detailed post page using dynamic routes.
+- [x] Implement routing to detailed post page using dynamic routes.
 
 ## 🥈 Medium Level
 
