@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 🥇 Basic Level
 
-## Getting Started
+In the Basic level, you will implement the core interface of application.
 
-First, run the development server:
+### Tasks
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [ ] Fetch all posts using axios
+- [ ] Implement posts design on main page.
+- [ ] Implement routing to detailed post page using dynamic routes.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🥈 Medium Level
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Tasks
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [ ] Create AuthContext that checks if the user is authenticated. If the user is not authenticated, they will be redirected to the login page.
+- [ ] Create Login Page that sends request to 'https://dummyjson.com/auth/login' in order to get auth token.
+- [ ] Rewrite all your axios requests by passing auth token (check Authorizing Resources 'https://dummyjson.com/docs#intro-auth').
+      Example: 'https://dummyjson.com/auth/posts'
 
-## Learn More
+## 🥇 Hard Level
 
-To learn more about Next.js, take a look at the following resources:
+### Tasks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [ ] Implement axios interceptor to pass auth token with requests.
+- [ ] Handle API errors in axios interceptor response.
+- [ ] Create ThemeToggle button that changes the theme of your application from dark/light to light/dark using Context API
+- [ ] Implement ADD, UPDATE, DELETE post features
