@@ -33,7 +33,7 @@ export default function Post() {
 
 	return (
 		<main className='container  py-4'>
-			<Link href='/'>
+			<Link href='/posts'>
 				<ArrowBigLeft className='w-12 h-12 absolute top-16 cursor-pointer' />
 			</Link>
 			<div className='flex flex-col items-center mt-20'>

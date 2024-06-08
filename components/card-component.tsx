@@ -33,7 +33,7 @@ export function CardComponent({ id, title, body, reactions, tags, views }: ICard
 							return <Badge key={index}>{tag}</Badge>;
 						})}
 					</div>
-					<Link href={`/${id}`}>
+					<Link href={`/posts/${id}`}>
 						<p className='text-slate-400 cursor-pointer hover:text-white'>Read more...</p>
 					</Link>
 				</CardFooter>
