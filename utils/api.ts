@@ -9,3 +9,13 @@ export const getPosts = async () => {
 		throw error;
 	}
 };
+
+export const getPost = async (id: number) => {
+	try {
+		const response = await apiClient(`/posts/${id}`);
+		return response.data;
+	} catch (error) {
+		console.error('Error fetching post:', error);
+		throw error;
+	}
+};

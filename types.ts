@@ -3,6 +3,7 @@ export interface IReactions {
 	dislikes: string;
 }
 export interface ICardProps {
+	id: number;
 	title: string;
 	body: string;
 	reactions: IReactions;
@@ -17,4 +18,8 @@ export interface IPost {
 	reactions: IReactions;
 	tags: string[];
 	views: string;
+}
+
+export interface CardWrapperProps {
+	posts: IPost[];
 }

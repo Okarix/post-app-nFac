@@ -1,9 +1,6 @@
 import { CardComponent } from './card-component';
 import { IPost } from '@/types';
-
-interface CardWrapperProps {
-	posts: IPost[];
-}
+import { CardWrapperProps } from '@/types';
 
 export default function CardWrapper({ posts }: CardWrapperProps) {
 	return (

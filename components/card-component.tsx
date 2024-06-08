@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { truncateText } from '@/utils/truncate';
 import { ICardProps } from '@/types';
 
-export function CardComponent({ title, body, reactions, tags, views }: ICardProps) {
+export function CardComponent({ id, title, body, reactions, tags, views }: ICardProps) {
 	return (
 		<Card className='w-full flex justify-between items-center'>
 			<div className='flex flex-col w-2/3 '>
@@ -33,7 +33,7 @@ export function CardComponent({ title, body, reactions, tags, views }: ICardProp
 							return <Badge key={index}>{tag}</Badge>;
 						})}
 					</div>
-					<Link href='/1'>
+					<Link href={`/${id}`}>
 						<p className='text-slate-400 cursor-pointer hover:text-white'>Read more...</p>
 					</Link>
 				</CardFooter>
