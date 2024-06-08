@@ -1,10 +1,11 @@
 import { CardComponent } from './card-component';
-import { getPosts } from '@/utils/api';
 import { IPost } from '@/types';
 
-export default async function CardWrapper() {
-	const posts: IPost[] = await getPosts();
+interface CardWrapperProps {
+	posts: IPost[];
+}
 
+export default function CardWrapper({ posts }: CardWrapperProps) {
 	return (
 		<main className='grid grid-flow-row gap-6'>
 			{posts.map((post: IPost) => {
