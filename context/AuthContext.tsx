@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
+import apiClient from '@/services/apiClient';
 import { IAuthContextProps, IAuthProviderProps } from '@/types/types';
 
 export const AuthContext = createContext<IAuthContextProps | undefined>(undefined);
@@ -17,7 +17,7 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
 		if (storedToken) {
 			setToken(storedToken);
 			setIsAuthenticated(true);
-			axios.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
+			apiClient.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`;
 		}
 		setLoading(false);
 	}, []);
@@ -30,12 +30,12 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
 
 	const login = async (username: string, password: string) => {
 		try {
-			const response = await axios.post('https://dummyjson.com/auth/login', { username, password });
+			const response = await apiClient.post('/auth/login', { username, password });
 			const { token } = response.data;
 			setToken(token);
 			setIsAuthenticated(true);
 			localStorage.setItem('authToken', token);
-			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+			apiClient.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 			router.push('/posts');
 		} catch (error) {
 			console.error('Login failed', error);
@@ -46,7 +46,7 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
 		setToken(null);
 		setIsAuthenticated(false);
 		localStorage.removeItem('authToken');
-		delete axios.defaults.headers.common['Authorization'];
+		delete apiClient.defaults.headers.common['Authorization'];
 		router.push('/');
 	};
 
