@@ -32,7 +32,7 @@ export const addPost = async (postData: { title: string; body: string }) => {
 
 export const updatePost = async (id: number, postData: { title: string; body: string }) => {
 	try {
-		const response = await apiClient.put(`/posts/${id}`);
+		const response = await apiClient.put(`/posts/${id}`, postData);
 		return response.data;
 	} catch (error) {
 		console.error('Error updating post:', error);
