@@ -12,9 +12,9 @@ In the Basic level, you will implement the core interface of application.
 
 ### Tasks
 
-- [ ] Create AuthContext that checks if the user is authenticated. If the user is not authenticated, they will be redirected to the login page.
-- [ ] Create Login Page that sends request to 'https://dummyjson.com/auth/login' in order to get auth token.
-- [ ] Rewrite all your axios requests by passing auth token (check Authorizing Resources 'https://dummyjson.com/docs#intro-auth').
+- [x] Create AuthContext that checks if the user is authenticated. If the user is not authenticated, they will be redirected to the login page.
+- [x] Create Login Page that sends request to 'https://dummyjson.com/auth/login' in order to get auth token.
+- [x] Rewrite all your axios requests by passing auth token (check Authorizing Resources 'https://dummyjson.com/docs#intro-auth').
       Example: 'https://dummyjson.com/auth/posts'
 
 ## 🥇 Hard Level

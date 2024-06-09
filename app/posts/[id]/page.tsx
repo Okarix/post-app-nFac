@@ -1,13 +1,13 @@
 'use client';
 
-import { IPost } from '@/types';
+import { IPost } from '@/types/types';
 import { getPost } from '@/utils/api';
 import { ThumbsUp, ThumbsDown, Eye, ArrowBigLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-export default function Post() {
+const Post: React.FC = () => {
 	const params = useParams();
 	const { id } = params;
 	const [post, setPost] = useState<IPost | null>(null);
@@ -61,4 +61,6 @@ export default function Post() {
 			</div>
 		</main>
 	);
-}
+};
+
+export default Post;

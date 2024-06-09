@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface IReactions {
 	likes: string;
 	dislikes: string;
@@ -22,4 +24,15 @@ export interface IPost {
 
 export interface CardWrapperProps {
 	posts: IPost[];
+}
+
+export interface AuthContextProps {
+	isAuthenticated: boolean;
+	token: string | null;
+	login: (username: string, password: string) => Promise<void>;
+	logout: () => void;
+}
+
+export interface AuthProviderProps {
+	children: ReactNode;
 }

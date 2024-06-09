@@ -1,8 +1,8 @@
 import CardWrapper from '@/components/card-wrapper';
 import { getPosts } from '@/utils/api';
-import { IPost } from '@/types';
+import { IPost } from '@/types/types';
 
-export default async function Posts() {
+const Posts: React.FC = async () => {
 	const posts: IPost[] = await getPosts();
 
 	return (
@@ -10,4 +10,6 @@ export default async function Posts() {
 			<CardWrapper posts={posts} />
 		</main>
 	);
-}
+};
+
+export default Posts;

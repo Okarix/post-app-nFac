@@ -3,7 +3,7 @@ import { ThumbsUp, ThumbsDown, Eye } from 'lucide-react';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
 import { truncateText } from '@/utils/truncate';
-import { ICardProps } from '@/types';
+import { ICardProps } from '@/types/types';
 
 export function CardComponent({ id, title, body, reactions, tags, views }: ICardProps) {
 	return (

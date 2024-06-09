@@ -1,10 +1,24 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
+import { useContext, useState } from 'react';
+import { AuthContext } from '@/context/AuthContext';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-export default function Home() {
+const Home: React.FC = () => {
+	const authContext = useContext(AuthContext);
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+
+	const handleLogin = async () => {
+		if (authContext) {
+			await authContext.login(username, password);
+		}
+	};
+
 	return (
 		<Tabs
 			defaultValue='account'
@@ -22,24 +36,28 @@ export default function Home() {
 					</CardHeader>
 					<CardContent className='space-y-2'>
 						<div className='space-y-1'>
-							<Label htmlFor='name'>Name</Label>
+							<Label htmlFor='username'>Username</Label>
 							<Input
-								id='name'
-								placeholder='Robert Smith'
-								type='name'
+								id='username'
+								placeholder='Username'
+								type='text'
+								value={username}
+								onChange={e => setUsername(e.target.value)}
 							/>
 						</div>
 						<div className='space-y-1'>
-							<Label htmlFor='username'>Password</Label>
+							<Label htmlFor='password'>Password</Label>
 							<Input
 								type='password'
 								id='password'
-								placeholder='hello12345'
+								placeholder='Password'
+								value={password}
+								onChange={e => setPassword(e.target.value)}
 							/>
 						</div>
 					</CardContent>
 					<CardFooter>
-						<Button>Log In</Button>
+						<Button onClick={handleLogin}>Log In</Button>
 					</CardFooter>
 				</Card>
 			</TabsContent>
@@ -55,15 +73,23 @@ export default function Home() {
 							<Input
 								id='name'
 								placeholder='Robert Smith'
-								type='name'
+								type='text'
 							/>
 						</div>
 						<div className='space-y-1'>
-							<Label htmlFor='username'>Password</Label>
+							<Label htmlFor='username'>Username</Label>
+							<Input
+								id='username'
+								placeholder='Username'
+								type='text'
+							/>
+						</div>
+						<div className='space-y-1'>
+							<Label htmlFor='password'>Password</Label>
 							<Input
 								type='password'
 								id='password'
-								placeholder='hello12345'
+								placeholder='Password'
 							/>
 						</div>
 					</CardContent>
@@ -74,4 +100,6 @@ export default function Home() {
 			</TabsContent>
 		</Tabs>
 	);
-}
+};
+
+export default Home;
