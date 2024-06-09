@@ -22,7 +22,7 @@ export const getPost = async (id: number) => {
 
 export const addPost = async (postData: { title: string; body: string }) => {
 	try {
-		const response = await apiClient.post('/posts/add');
+		const response = await apiClient.post('/posts/add', postData);
 		return response.data;
 	} catch (error) {
 		console.error('Error adding post:', error);
