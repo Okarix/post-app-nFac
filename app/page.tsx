@@ -65,7 +65,7 @@ const Home: React.FC = () => {
 				<Card>
 					<CardHeader>
 						<CardTitle>Sign Up</CardTitle>
-						<CardDescription>If you don't have an account, sign up for one</CardDescription>
+						<CardDescription>If you don&apos;t have an account, sign up for one</CardDescription>
 					</CardHeader>
 					<CardContent className='space-y-2'>
 						<div className='space-y-1'>
