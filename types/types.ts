@@ -22,17 +22,17 @@ export interface IPost {
 	views: string;
 }
 
-export interface CardWrapperProps {
+export interface ICardWrapperProps {
 	posts: IPost[];
 }
 
-export interface AuthContextProps {
+export interface IAuthContextProps {
 	isAuthenticated: boolean;
 	token: string | null;
 	login: (username: string, password: string) => Promise<void>;
 	logout: () => void;
 }
 
-export interface AuthProviderProps {
+export interface IAuthProviderProps {
 	children: ReactNode;
 }
