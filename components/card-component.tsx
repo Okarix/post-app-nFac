@@ -1,11 +1,25 @@
+'use client';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ThumbsUp, ThumbsDown, Eye } from 'lucide-react';
 import { Badge } from './ui/badge';
 import Link from 'next/link';
 import { truncateText } from '@/utils/truncate';
 import { ICardProps } from '@/types/types';
+import { useRouter } from 'next/navigation';
+import { deletePost } from '@/utils/api';
 
 export function CardComponent({ id, title, body, reactions, tags, views }: ICardProps) {
+	const router = useRouter();
+
+	const handleDelete = async () => {
+		try {
+			await deletePost(id);
+			router.refresh();
+		} catch (error) {
+			console.error('Error deleting post:', error);
+		}
+	};
+
 	return (
 		<Card className='w-full flex justify-between items-center'>
 			<div className='flex flex-col w-2/3 '>
@@ -36,6 +50,12 @@ export function CardComponent({ id, title, body, reactions, tags, views }: ICard
 					<Link href={`/posts/${id}`}>
 						<p className='text-slate-400 cursor-pointer hover:text-white'>Read more...</p>
 					</Link>
+					<button
+						onClick={handleDelete}
+						className='bg-red-500 text-white px-4 py-2 rounded'
+					>
+						Delete
+					</button>
 				</CardFooter>
 			</div>
 			<CardContent className='w-1/5 '>
